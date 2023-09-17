@@ -1,20 +1,20 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { styles } from '../styles/styles'; // Importa os estilos
+import { styles } from '../styles/styles';
+import MeuBotao from '../components/MeuBotao';
+import theme from '../theme/theme';
 
-import MeuBotao from '../components/MeuBotao'; // Importa o componente MeuBotao
-
-export default function Tela1({ navigation }) {
+const Tela1 = ({ navigateToTela2 }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Tela 1</Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Tela2')}
-      >
+      <Text>Sua tela principal</Text>
+      <TouchableOpacity style={theme.button} onPress={navigateToTela2}>
         <Text style={styles.buttonText}>Ir para Tela 2</Text>
       </TouchableOpacity>
-      <MeuBotao texto="Um Botão Customizado" />
+      <MeuBotao texto={"Tela 2"} onPress={navigateToTela2} />
     </View>
   );
-}
+};
+
+export default Tela1;

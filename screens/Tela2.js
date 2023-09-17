@@ -1,14 +1,18 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { styles } from '../styles/styles';
+import theme from '../theme/theme';
 
-export default function Tela2({ navigation }) {
+const Tela2 = ({ navigateToTela1 }) => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Tela 2  </Text>
-      <Button
-        title="Voltar para Tela 1"
-        onPress={() => navigation.navigate('Tela1')}
-      />
+    <View style={theme.container}>
+      <Text style={styles.text}>Tela 2</Text>
+      <Text>O que você quer na tela 2</Text>
+      <TouchableOpacity style={styles.button} onPress={navigateToTela1}>
+        <Text style={styles.buttonText}>Voltar para Tela 1</Text>
+      </TouchableOpacity>
     </View>
   );
-}
+};
+
+export default Tela2;
